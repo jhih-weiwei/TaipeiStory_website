@@ -26,24 +26,19 @@ function drawCard() {
   const poemEl = document.getElementById("cardPoem");
   const detailBtn = document.getElementById("detailBtn");
 
-  btn.innerText = "抽牌中⋯⋯";
-  btn.disabled = true;
+  const pick = tarotCards[Math.floor(Math.random() * tarotCards.length)];
 
-  setTimeout(() => {
-    // 隨機抽一張
-    const pick = tarotCards[Math.floor(Math.random() * tarotCards.length)];
+  titleEl.innerText = pick.title;
+  poemEl.innerHTML = pick.poem;
 
-    // 填入內容
-    titleEl.innerText = pick.title;
-    poemEl.innerHTML = pick.poem;
-    detailBtn.onclick = () => {
-      window.location.href = pick.link;
-    };
+  detailBtn.onclick = () => {
+    window.location.href = pick.link;
+  };
 
-    btn.style.display = "none";
-    card.classList.remove("hidden");
-  }, 900);
+  btn.style.display = "none";
+  card.classList.remove("hidden");
 }
+
 
 
 function goDetail() {

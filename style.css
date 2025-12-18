@@ -36,3 +36,119 @@ button {
 #drawBtn:hover {
   background: #000;
 }
+
+.tarot-detail-card {
+  max-width: 420px;
+  margin: 60px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fdfbf7;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* 圖片縮小的關鍵 */
+
+.tarot-img {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+  margin: 12px auto 20px;
+  border-radius: 8px;
+}
+
+
+
+
+.small-img {
+  width: 10%;          /* ← 重點：不是 100% */
+  max-width: 260px;    /* ← 絕對上限 */
+  height: auto;
+  display: block;
+  margin: 16px auto 24px;
+  border-radius: 12px;
+}
+
+
+.card-body {
+  padding: 24px;
+}
+
+.card-title {
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}
+
+.card-text {
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  text-decoration: none;
+  color: #2f2a28;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.tarot-card {
+  width: 320px;
+  min-height: 480px;
+  margin: 80px auto;
+  padding: 32px 24px;
+
+  background: #fdfbf7;
+  border: 2px solid #2f2a28;
+  border-radius: 18px;
+
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+
+  animation: fadeIn 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.title {
+  font-size: 28px;
+  letter-spacing: 0.25em;
+  margin-bottom: 24px;
+}
+
+.poem {
+  line-height: 2;
+  margin-bottom: 36px;
+}
+
+#detailBtn {
+  border: 1px solid #2f2a28;
+  background: transparent;
+  padding: 10px 28px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+#detailBtn:hover {
+  background: #2f2a28;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
