@@ -1,22 +1,51 @@
-const places = [
+const tarotCards = [
   {
-    name: "大稻埕",
-    desc: "河岸、老街與茶香交織的地方。"
+    title: "醉月湖",
+    poem: "為愛殉情強說美，<br>醉倒月翁皺上眉。",
+    link: "detail-moonlake.html"
   },
   {
-    name: "九份",
-    desc: "山城、霧氣與燈火，像一場未醒的夢。"
+    title: "辛亥隧道",
+    poem: "莫怪車窗生幻影，<br>陰陽交界在眉前。",
+    link: "detail-xinhai.html"
   },
   {
-    name: "淡水",
-    desc: "海風、夕陽，還有走得很慢的時間。"
+    title: "馬場町",
+    poem: "昔日灘頭染血沙，<br>冤魂幾許不歸家。",
+    link: "detail-Machangting.html"
   }
+  // ……一直加到至少 12 張
 ];
 
-function draw() {
-  const pick = places[Math.floor(Math.random() * places.length)];
-  document.getElementById("result").innerHTML = `
-    <h2>${pick.name}</h2>
-    <p>${pick.desc}</p>
-  `;
+
+function drawCard() {
+  const btn = document.getElementById("drawBtn");
+  const card = document.getElementById("card");
+
+  const titleEl = document.getElementById("cardTitle");
+  const poemEl = document.getElementById("cardPoem");
+  const detailBtn = document.getElementById("detailBtn");
+
+  btn.innerText = "抽牌中⋯⋯";
+  btn.disabled = true;
+
+  setTimeout(() => {
+    // 隨機抽一張
+    const pick = tarotCards[Math.floor(Math.random() * tarotCards.length)];
+
+    // 填入內容
+    titleEl.innerText = pick.title;
+    poemEl.innerHTML = pick.poem;
+    detailBtn.onclick = () => {
+      window.location.href = pick.link;
+    };
+
+    btn.style.display = "none";
+    card.classList.remove("hidden");
+  }, 900);
+}
+
+
+function goDetail() {
+  window.location.href = "detail.html";
 }

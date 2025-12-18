@@ -2,13 +2,22 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>靈兒的抽籤地圖</title>
+  <title>魂係臺北</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>今日去哪裡？</h1>
+  <h1>指點迷津</h1>
 
-  <button onclick="draw()">抽籤</button>
+  <button id="drawBtn" onclick="drawCard()">抽一張牌</button>
+
+    <div class="tarot-card hidden" id="card">
+    <h1 class="title" id="cardTitle"></h1>
+
+    <p class="poem" id="cardPoem"></p>
+
+    <button id="detailBtn">展開牌義</button>
+    </div>
+
 
   <div id="result"></div>
 
