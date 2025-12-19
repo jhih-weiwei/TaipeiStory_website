@@ -6,17 +6,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <h1>指點迷津</h1>
 
   <button id="drawBtn" onclick="drawCard()">抽一張牌</button>
 
-    <div class="tarot-card hidden" id="card">
+  <!-- 抽牌後顯示的塔羅卡 -->
+  <div class="tarot-card hidden" id="card">
+
     <h1 class="title" id="cardTitle"></h1>
 
     <p class="poem" id="cardPoem"></p>
 
+    <!-- 新增：吉凶／宜忌籤語 -->
+    <p class="omen" id="cardOmen"></p>
+
     <button id="detailBtn">展開牌義</button>
-    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
